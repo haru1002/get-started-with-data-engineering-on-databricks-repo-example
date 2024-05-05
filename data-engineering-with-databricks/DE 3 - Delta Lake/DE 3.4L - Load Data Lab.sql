@@ -71,8 +71,9 @@
 
 -- COMMAND ----------
 
--- TODO
-<FILL_IN>
+-- Create a Delta table
+create or replace table events_raw
+  (key binary, offset bigint, partition int, timestamp bigint, topic string, value binary)
 
 -- COMMAND ----------
 
@@ -115,7 +116,8 @@
 -- COMMAND ----------
 
 -- TODO
-<FILL_IN>
+insert into events_raw
+select * from events_json
 
 -- COMMAND ----------
 
@@ -129,7 +131,7 @@
 -- COMMAND ----------
 
 -- TODO
-<FILL_IN>
+select * from events_raw
 
 -- COMMAND ----------
 
@@ -172,7 +174,8 @@
 -- COMMAND ----------
 
 -- TODO
-<FILL_IN> ${da.paths.datasets}/ecommerce/raw/item-lookup
+create or replace table item_lookup as
+select * from parquet.`${da.paths.datasets}/ecommerce/raw/item-lookup`
 
 -- COMMAND ----------
 
