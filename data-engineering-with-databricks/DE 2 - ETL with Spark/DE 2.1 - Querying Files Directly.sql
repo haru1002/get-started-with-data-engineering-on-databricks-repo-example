@@ -35,7 +35,8 @@
 
 -- COMMAND ----------
 
--- MAGIC %run ./Includes/Classroom-Setup-02.1
+-- MAGIC %python
+-- MAGIC run "./Includes/Classroom-Setup-02.1"
 
 -- COMMAND ----------
 
@@ -73,20 +74,6 @@
 -- MAGIC
 -- MAGIC files = dbutils.fs.ls(DA.paths.kafka_events)
 -- MAGIC display(files)
-
--- COMMAND ----------
-
--- DBTITLE 0,--i18n-f1ddfb40-9c95-4b9a-84e5-2958ac01166d
--- MAGIC %md
--- MAGIC
--- MAGIC
--- MAGIC Here, we'll be using relative file paths to data that's been written to the DBFS root. 
--- MAGIC
--- MAGIC Most workflows will require users to access data from external cloud storage locations. 
--- MAGIC
--- MAGIC In most companies, a workspace administrator will be responsible for configuring access to these storage locations.
--- MAGIC
--- MAGIC Instructions for configuring and accessing these locations can be found in the cloud-vendor specific self-paced courses titled "Cloud Architecture & Systems Integrations".
 
 -- COMMAND ----------
 
